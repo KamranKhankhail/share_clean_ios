@@ -1,120 +1,653 @@
 // !$*UTF8*$!
 {
-  archiveVersion = 1;
-  classes = {};
-  objectVersion = 55;
-  objects = {
-    /* Build files */
-    A_AppAssets = {isa = PBXBuildFile; fileRef = R_AppAssets; };
-    A_AppSwift = {isa = PBXBuildFile; fileRef = R_AppSwift; };
-    A_Home = {isa = PBXBuildFile; fileRef = R_Home; };
-    A_Detect = {isa = PBXBuildFile; fileRef = R_Detect; };
-    A_Export = {isa = PBXBuildFile; fileRef = R_Export; };
-    A_Settings = {isa = PBXBuildFile; fileRef = R_Settings; };
-    A_Paywall = {isa = PBXBuildFile; fileRef = R_Paywall; };
-    A_Core1 = {isa = PBXBuildFile; fileRef = R_Core1; };
-    A_Core2 = {isa = PBXBuildFile; fileRef = R_Core2; };
-    A_Core3 = {isa = PBXBuildFile; fileRef = R_Core3; };
-    A_Core4 = {isa = PBXBuildFile; fileRef = R_Core4; };
-    A_Core5 = {isa = PBXBuildFile; fileRef = R_Core5; };
-    A_Core6 = {isa = PBXBuildFile; fileRef = R_Core6; };
-    A_Core7 = {isa = PBXBuildFile; fileRef = R_Core7; };
-    A_Core8 = {isa = PBXBuildFile; fileRef = R_Core8; };
-    A_Core9 = {isa = PBXBuildFile; fileRef = R_Core9; };
-    A_Core10 = {isa = PBXBuildFile; fileRef = R_Core10; };
-    A_Core11 = {isa = PBXBuildFile; fileRef = R_Core11; };
-    A_Core12 = {isa = PBXBuildFile; fileRef = R_Core12; };
-    A_AppEnt = {isa = PBXBuildFile; fileRef = R_AppEnt; };
-    E1_Src = {isa = PBXBuildFile; fileRef = R_E1_Src; };
-    E1_Storyboard = {isa = PBXBuildFile; fileRef = R_E1_Storyboard; };
-    E2_Src = {isa = PBXBuildFile; fileRef = R_E2_Src; };
-    E2_Storyboard = {isa = PBXBuildFile; fileRef = R_E2_Storyboard; };
-    Embed_E1 = {isa = PBXBuildFile; fileRef = P_E1; };
-    Embed_E2 = {isa = PBXBuildFile; fileRef = P_E2; };
-    T_Src = {isa = PBXBuildFile; fileRef = R_T_Swift; };
-    /* File references */
-    R_Project = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "ShareClean.xcodeproj"; };
-    R_AppPlist = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-    R_AppAssets = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-    R_AppEnt = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareClean.entitlements; sourceTree = "<group>"; };
-    R_AppSwift = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-    R_Home = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-    R_Detect = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectView.swift; sourceTree = "<group>"; };
-    R_Export = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportView.swift; sourceTree = "<group>"; };
-    R_Settings = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-    R_Paywall = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
-    R_Core1 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionSettings.swift; sourceTree = "<group>"; };
-    R_Core2 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexLibrary.swift; sourceTree = "<group>"; };
-    R_Core3 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
-    R_Core4 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedactionMask.swift; sourceTree = "<group>"; };
-    R_Core5 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionDetector.swift; sourceTree = "<group>"; };
-    R_Core6 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedactionRenderer.swift; sourceTree = "<group>"; };
-    R_Core7 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyService.swift; sourceTree = "<group>"; };
-    R_Core8 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXIFStripper.swift; sourceTree = "<group>"; };
-    R_Core9 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryManager.swift; sourceTree = "<group>"; };
-    R_Core10 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotaManager.swift; sourceTree = "<group>"; };
-    R_Core11 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
-    R_Core12 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
-    R_E1_Plist = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-    R_E1_Src = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
-    R_E1_Storyboard = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
-    R_E1_Ent = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareCleanAction.entitlements; sourceTree = "<group>"; };
-    R_E2_Plist = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-    R_E2_Src = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditingViewController.swift; sourceTree = "<group>"; };
-    R_E2_Storyboard = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
-    R_E2_Ent = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareCleanPhotoEdit.entitlements; sourceTree = "<group>"; };
-    R_T_Swift = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCleanTests.swift; sourceTree = "<group>"; };
-    P_App = {isa = PBXFileReference; explicitFileType = wrapper.application; path = ShareClean.app; sourceTree = BUILT_PRODUCTS_DIR; };
-    P_E1 = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; path = ShareCleanAction.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-    P_E2 = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; path = ShareCleanPhotoEdit.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-    P_Tests = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = ShareCleanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-    /* Groups */
-    G_Root = {isa = PBXGroup; children = (G_App, G_Ext1, G_Ext2, G_Tests, G_Products); sourceTree = "<group>"; };
-    G_App = {isa = PBXGroup; path = ShareClean; sourceTree = "<group>"; children = (R_AppPlist, G_Res, G_Views, G_Core, R_AppEnt); };
-    G_Res = {isa = PBXGroup; path = Resources; sourceTree = "<group>"; children = (R_AppAssets); };
-    G_Views = {isa = PBXGroup; path = Views; sourceTree = "<group>"; children = (R_AppSwift, R_Home, R_Detect, R_Export, R_Settings, R_Paywall); };
-    G_Core = {isa = PBXGroup; path = Core; sourceTree = "<group>"; children = (R_Core1,R_Core2,R_Core3,R_Core4,R_Core5,R_Core6,R_Core7,R_Core8,R_Core9,R_Core10,R_Core11,R_Core12); };
-    G_Ext1 = {isa = PBXGroup; path = ShareCleanAction; sourceTree = "<group>"; children = (R_E1_Plist, R_E1_Src, R_E1_Storyboard, R_E1_Ent); };
-    G_Ext2 = {isa = PBXGroup; path = ShareCleanPhotoEdit; sourceTree = "<group>"; children = (R_E2_Plist, R_E2_Src, R_E2_Storyboard, R_E2_Ent); };
-    G_Tests = {isa = PBXGroup; path = ShareCleanTests; sourceTree = "<group>"; children = (R_T_Swift); };
-    G_Products = {isa = PBXGroup; name = Products; sourceTree = "<group>"; children = (P_App, P_E1, P_E2, P_Tests); };
-    /* Targets */
-    T_App = {isa = PBXNativeTarget; name = ShareClean; productName = ShareClean; productType = "com.apple.product-type.application"; productReference = P_App; buildConfigurationList = C_AppConfigs; buildPhases = (BP_AppSources,BP_AppFrameworks,BP_AppResources,BP_EmbedExt); };
-    T_E1 = {isa = PBXNativeTarget; name = ShareCleanAction; productName = ShareCleanAction; productType = "com.apple.product-type.app-extension"; productReference = P_E1; buildConfigurationList = C_E1Configs; buildPhases = (BP_E1Sources,BP_E1Frameworks,BP_E1Resources); };
-    T_E2 = {isa = PBXNativeTarget; name = ShareCleanPhotoEdit; productName = ShareCleanPhotoEdit; productType = "com.apple.product-type.app-extension"; productReference = P_E2; buildConfigurationList = C_E2Configs; buildPhases = (BP_E2Sources,BP_E2Frameworks,BP_E2Resources); };
-    T_Tests = {isa = PBXNativeTarget; name = ShareCleanTests; productName = ShareCleanTests; productType = "com.apple.product-type.bundle.unit-test"; productReference = P_Tests; buildConfigurationList = C_TestsConfigs; buildPhases = (BP_TestsSources,BP_TestsFrameworks,BP_TestsResources); };
-    /* Project */
-    PROJ = {isa = PBXProject; attributes = {LastSwiftUpdateCheck = 1500; LastUpgradeCheck = 1500;}; buildConfigurationList = C_ProjConfigs; compatibilityVersion = "Xcode 15.0"; developmentRegion = en; mainGroup = G_Root; productRefGroup = G_Products; targets = (T_App,T_E1,T_E2,T_Tests); };
-    /* Build phases */
-    BP_AppSources = {isa = PBXSourcesBuildPhase; files = (A_AppSwift,A_Home,A_Detect,A_Export,A_Settings,A_Paywall,A_Core1,A_Core2,A_Core3,A_Core4,A_Core5,A_Core6,A_Core7,A_Core8,A_Core9,A_Core10,A_Core11,A_Core12); };
-    BP_AppFrameworks = {isa = PBXFrameworksBuildPhase; files = (); };
-    BP_AppResources = {isa = PBXResourcesBuildPhase; files = (A_AppAssets); };
-    BP_EmbedExt = {isa = PBXCopyFilesBuildPhase; dstSubfolderSpec = 13; files = (Embed_E1, Embed_E2); name = "Embed App Extensions"; };
-    BP_E1Sources = {isa = PBXSourcesBuildPhase; files = (E1_Src,A_Core1,A_Core2,A_Core3,A_Core4,A_Core5,A_Core6,A_Core7,A_Core8,A_Core10); };
-    BP_E1Frameworks = {isa = PBXFrameworksBuildPhase; files = (); };
-    BP_E1Resources = {isa = PBXResourcesBuildPhase; files = (E1_Storyboard); };
-    BP_E2Sources = {isa = PBXSourcesBuildPhase; files = (E2_Src,A_Core1,A_Core2,A_Core3,A_Core4,A_Core5,A_Core6,A_Core7,A_Core8,A_Core10); };
-    BP_E2Frameworks = {isa = PBXFrameworksBuildPhase; files = (); };
-    BP_E2Resources = {isa = PBXResourcesBuildPhase; files = (E2_Storyboard); };
-    BP_TestsSources = {isa = PBXSourcesBuildPhase; files = (T_Src); };
-    BP_TestsFrameworks = {isa = PBXFrameworksBuildPhase; files = (); };
-    BP_TestsResources = {isa = PBXResourcesBuildPhase; files = (); };
-    /* Configurations */
-    C_ProjDebug = {isa = XCBuildConfiguration; name = Debug; buildSettings = {SWIFT_VERSION=5.0; IPHONEOS_DEPLOYMENT_TARGET=13.0; DEVELOPMENT_TEAM="";}; };
-    C_ProjRelease = {isa = XCBuildConfiguration; name = Release; buildSettings = {SWIFT_VERSION=5.0; IPHONEOS_DEPLOYMENT_TARGET=13.0; DEVELOPMENT_TEAM="";}; };
-    C_ProjConfigs = {isa = XCConfigurationList; buildConfigurations = (C_ProjDebug, C_ProjRelease); defaultConfigurationName = Release; };
-    C_AppDebug = {isa = XCBuildConfiguration; name = Debug; buildSettings = {INFOPLIST_FILE=ShareClean/Info.plist; PRODUCT_BUNDLE_IDENTIFIER=com.yourcompany.ShareClean; CODE_SIGN_STYLE=Automatic; CODE_SIGN_ENTITLEMENTS="ShareClean/ShareClean.entitlements"; ASSETCATALOG_COMPILER_APPICON_NAME=AppIcon; SWIFT_VERSION=5.0; IPHONEOS_DEPLOYMENT_TARGET=13.0;}; };
-    C_AppRelease = {isa = XCBuildConfiguration; name = Release; buildSettings = {INFOPLIST_FILE=ShareClean/Info.plist; PRODUCT_BUNDLE_IDENTIFIER=com.yourcompany.ShareClean; CODE_SIGN_STYLE=Automatic; CODE_SIGN_ENTITLEMENTS="ShareClean/ShareClean.entitlements"; ASSETCATALOG_COMPILER_APPICON_NAME=AppIcon; SWIFT_VERSION=5.0; IPHONEOS_DEPLOYMENT_TARGET=13.0;}; };
-    C_AppConfigs = {isa = XCConfigurationList; buildConfigurations = (C_AppDebug, C_AppRelease); defaultConfigurationName = Release; };
-    C_E1Debug = {isa = XCBuildConfiguration; name = Debug; buildSettings = {INFOPLIST_FILE=ShareCleanAction/Info.plist; PRODUCT_BUNDLE_IDENTIFIER=com.yourcompany.ShareClean.Action; CODE_SIGN_STYLE=Automatic; CODE_SIGN_ENTITLEMENTS="ShareCleanAction/ShareCleanAction.entitlements"; SWIFT_VERSION=5.0; IPHONEOS_DEPLOYMENT_TARGET=13.0;}; };
-    C_E1Release = {isa = XCBuildConfiguration; name = Release; buildSettings = {INFOPLIST_FILE=ShareCleanAction/Info.plist; PRODUCT_BUNDLE_IDENTIFIER=com.yourcompany.ShareClean.Action; CODE_SIGN_STYLE=Automatic; CODE_SIGN_ENTITLEMENTS="ShareCleanAction/ShareCleanAction.entitlements"; SWIFT_VERSION=5.0; IPHONEOS_DEPLOYMENT_TARGET=13.0;}; };
-    C_E1Configs = {isa = XCConfigurationList; buildConfigurations = (C_E1Debug, C_E1Release); defaultConfigurationName = Release; };
-    C_E2Debug = {isa = XCBuildConfiguration; name = Debug; buildSettings = {INFOPLIST_FILE=ShareCleanPhotoEdit/Info.plist; PRODUCT_BUNDLE_IDENTIFIER=com.yourcompany.ShareClean.PhotoEdit; CODE_SIGN_STYLE=Automatic; CODE_SIGN_ENTITLEMENTS="ShareCleanPhotoEdit/ShareCleanPhotoEdit.entitlements"; SWIFT_VERSION=5.0; IPHONEOS_DEPLOYMENT_TARGET=13.0;}; };
-    C_E2Release = {isa = XCBuildConfiguration; name = Release; buildSettings = {INFOPLIST_FILE=ShareCleanPhotoEdit/Info.plist; PRODUCT_BUNDLE_IDENTIFIER=com.yourcompany.ShareClean.PhotoEdit; CODE_SIGN_STYLE=Automatic; CODE_SIGN_ENTITLEMENTS="ShareCleanPhotoEdit/ShareCleanPhotoEdit.entitlements"; SWIFT_VERSION=5.0; IPHONEOS_DEPLOYMENT_TARGET=13.0;}; };
-    C_E2Configs = {isa = XCConfigurationList; buildConfigurations = (C_E2Debug, C_E2Release); defaultConfigurationName = Release; };
-    C_TestsDebug = {isa = XCBuildConfiguration; name = Debug; buildSettings = {SWIFT_VERSION=5.0; IPHONEOS_DEPLOYMENT_TARGET=13.0;}; };
-    C_TestsRelease = {isa = XCBuildConfiguration; name = Release; buildSettings = {SWIFT_VERSION=5.0; IPHONEOS_DEPLOYMENT_TARGET=13.0;}; };
-    C_TestsConfigs = {isa = XCConfigurationList; buildConfigurations = (C_TestsDebug, C_TestsRelease); defaultConfigurationName = Release; };
-  };
-  rootObject = PROJ;
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		423510532E7DC945006B512F /* DetectionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core1 /* DetectionSettings.swift */; };
+		423510542E7DC945006B512F /* RegexLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core2 /* RegexLibrary.swift */; };
+		423510552E7DC945006B512F /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core3 /* Geometry.swift */; };
+		423510562E7DC945006B512F /* RedactionMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core4 /* RedactionMask.swift */; };
+		423510572E7DC945006B512F /* VisionDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core5 /* VisionDetector.swift */; };
+		423510582E7DC945006B512F /* RedactionRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core6 /* RedactionRenderer.swift */; };
+		423510592E7DC945006B512F /* VerifyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core7 /* VerifyService.swift */; };
+		4235105A2E7DC945006B512F /* EXIFStripper.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core8 /* EXIFStripper.swift */; };
+		4235105B2E7DC945006B512F /* QuotaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core10 /* QuotaManager.swift */; };
+		4235105C2E7DC945006B512F /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core13 /* AppConstants.swift */; };
+		4235105D2E7DC945006B512F /* DetectionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core1 /* DetectionSettings.swift */; };
+		4235105E2E7DC945006B512F /* RegexLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core2 /* RegexLibrary.swift */; };
+		4235105F2E7DC945006B512F /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core3 /* Geometry.swift */; };
+		423510602E7DC945006B512F /* RedactionMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core4 /* RedactionMask.swift */; };
+		423510612E7DC945006B512F /* VisionDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core5 /* VisionDetector.swift */; };
+		423510622E7DC945006B512F /* RedactionRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core6 /* RedactionRenderer.swift */; };
+		423510632E7DC945006B512F /* VerifyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core7 /* VerifyService.swift */; };
+		423510642E7DC945006B512F /* EXIFStripper.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core8 /* EXIFStripper.swift */; };
+		423510652E7DC945006B512F /* QuotaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core10 /* QuotaManager.swift */; };
+		423510662E7DC945006B512F /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core13 /* AppConstants.swift */; };
+		A_AppAssets /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = R_AppAssets /* Assets.xcassets */; };
+		A_AppSwift /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_AppSwift /* App.swift */; };
+		A_Core1 /* DetectionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core1 /* DetectionSettings.swift */; };
+		A_Core10 /* QuotaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core10 /* QuotaManager.swift */; };
+		A_Core11 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core11 /* IAPManager.swift */; };
+		A_Core12 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core12 /* ImageModel.swift */; };
+		A_Core13 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core13 /* AppConstants.swift */; };
+		A_Core2 /* RegexLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core2 /* RegexLibrary.swift */; };
+		A_Core3 /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core3 /* Geometry.swift */; };
+		A_Core4 /* RedactionMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core4 /* RedactionMask.swift */; };
+		A_Core5 /* VisionDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core5 /* VisionDetector.swift */; };
+		A_Core6 /* RedactionRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core6 /* RedactionRenderer.swift */; };
+		A_Core7 /* VerifyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core7 /* VerifyService.swift */; };
+		A_Core8 /* EXIFStripper.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core8 /* EXIFStripper.swift */; };
+		A_Core9 /* PhotoLibraryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Core9 /* PhotoLibraryManager.swift */; };
+		A_Detect /* DetectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Detect /* DetectView.swift */; };
+		A_Export /* ExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Export /* ExportView.swift */; };
+		A_Home /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Home /* HomeView.swift */; };
+		A_Launch /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = R_Launch /* LaunchScreen.storyboard */; };
+		A_Paywall /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Paywall /* PaywallView.swift */; };
+		A_Settings /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_Settings /* SettingsView.swift */; };
+		E1_Src /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_E1_Src /* ActionViewController.swift */; };
+		E1_Storyboard /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = R_E1_Storyboard /* MainInterface.storyboard */; };
+		E2_Src /* PhotoEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_E2_Src /* PhotoEditingViewController.swift */; };
+		E2_Storyboard /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = R_E2_Storyboard /* MainInterface.storyboard */; };
+		Embed_E1 /* ShareCleanAction.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = P_E1 /* ShareCleanAction.appex */; };
+		Embed_E2 /* ShareCleanPhotoEdit.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = P_E2 /* ShareCleanPhotoEdit.appex */; };
+		T_Src /* ShareCleanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = R_T_Swift /* ShareCleanTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BP_EmbedExt /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 0;
+			dstSubfolderSpec = 13;
+			files = (
+				Embed_E1 /* ShareCleanAction.appex in Embed App Extensions */,
+				Embed_E2 /* ShareCleanPhotoEdit.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		P_App /* .app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = .app; sourceTree = BUILT_PRODUCTS_DIR; };
+		P_E1 /* ShareCleanAction.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; name = ShareCleanAction.appex; path = .appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		P_E2 /* ShareCleanPhotoEdit.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; name = ShareCleanPhotoEdit.appex; path = .appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		P_Tests /* ShareCleanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; name = ShareCleanTests.xctest; path = .xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		R_AppAssets /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		R_AppEnt /* ShareClean.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareClean.entitlements; sourceTree = "<group>"; };
+		R_AppPlist /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		R_AppSwift /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		R_Core1 /* DetectionSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionSettings.swift; sourceTree = "<group>"; };
+		R_Core10 /* QuotaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotaManager.swift; sourceTree = "<group>"; };
+		R_Core11 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
+		R_Core12 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		R_Core13 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		R_Core2 /* RegexLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexLibrary.swift; sourceTree = "<group>"; };
+		R_Core3 /* Geometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
+		R_Core4 /* RedactionMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedactionMask.swift; sourceTree = "<group>"; };
+		R_Core5 /* VisionDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionDetector.swift; sourceTree = "<group>"; };
+		R_Core6 /* RedactionRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedactionRenderer.swift; sourceTree = "<group>"; };
+		R_Core7 /* VerifyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyService.swift; sourceTree = "<group>"; };
+		R_Core8 /* EXIFStripper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXIFStripper.swift; sourceTree = "<group>"; };
+		R_Core9 /* PhotoLibraryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryManager.swift; sourceTree = "<group>"; };
+		R_Detect /* DetectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectView.swift; sourceTree = "<group>"; };
+		R_E1_Ent /* ShareCleanAction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareCleanAction.entitlements; sourceTree = "<group>"; };
+		R_E1_Plist /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		R_E1_Src /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		R_E1_Storyboard /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		R_E2_Ent /* ShareCleanPhotoEdit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareCleanPhotoEdit.entitlements; sourceTree = "<group>"; };
+		R_E2_Plist /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		R_E2_Src /* PhotoEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditingViewController.swift; sourceTree = "<group>"; };
+		R_E2_Storyboard /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		R_Export /* ExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportView.swift; sourceTree = "<group>"; };
+		R_Home /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		R_Launch /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		R_Paywall /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		R_Settings /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		R_T_Swift /* ShareCleanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCleanTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BP_AppFrameworks /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BP_E1Frameworks /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BP_E2Frameworks /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BP_TestsFrameworks /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		G_App /* ShareClean */ = {
+			isa = PBXGroup;
+			children = (
+				R_AppPlist /* Info.plist */,
+				G_Res /* Resources */,
+				G_Views /* Views */,
+				G_Core /* Core */,
+				R_AppEnt /* ShareClean.entitlements */,
+			);
+			path = ShareClean;
+			sourceTree = "<group>";
+		};
+		G_Core /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				R_Core1 /* DetectionSettings.swift */,
+				R_Core2 /* RegexLibrary.swift */,
+				R_Core3 /* Geometry.swift */,
+				R_Core4 /* RedactionMask.swift */,
+				R_Core5 /* VisionDetector.swift */,
+				R_Core6 /* RedactionRenderer.swift */,
+				R_Core7 /* VerifyService.swift */,
+				R_Core8 /* EXIFStripper.swift */,
+				R_Core9 /* PhotoLibraryManager.swift */,
+				R_Core10 /* QuotaManager.swift */,
+				R_Core11 /* IAPManager.swift */,
+				R_Core12 /* ImageModel.swift */,
+				R_Core13 /* AppConstants.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		G_Ext1 /* ShareCleanAction */ = {
+			isa = PBXGroup;
+			children = (
+				R_E1_Plist /* Info.plist */,
+				R_E1_Src /* ActionViewController.swift */,
+				R_E1_Storyboard /* MainInterface.storyboard */,
+				R_E1_Ent /* ShareCleanAction.entitlements */,
+			);
+			path = ShareCleanAction;
+			sourceTree = "<group>";
+		};
+		G_Ext2 /* ShareCleanPhotoEdit */ = {
+			isa = PBXGroup;
+			children = (
+				R_E2_Plist /* Info.plist */,
+				R_E2_Src /* PhotoEditingViewController.swift */,
+				R_E2_Storyboard /* MainInterface.storyboard */,
+				R_E2_Ent /* ShareCleanPhotoEdit.entitlements */,
+			);
+			path = ShareCleanPhotoEdit;
+			sourceTree = "<group>";
+		};
+		G_Products /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				P_App /* .app */,
+				P_E1 /* ShareCleanAction.appex */,
+				P_E2 /* ShareCleanPhotoEdit.appex */,
+				P_Tests /* ShareCleanTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		G_Res /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				R_AppAssets /* Assets.xcassets */,
+				R_Launch /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		G_Root = {
+			isa = PBXGroup;
+			children = (
+				G_App /* ShareClean */,
+				G_Ext1 /* ShareCleanAction */,
+				G_Ext2 /* ShareCleanPhotoEdit */,
+				G_Tests /* ShareCleanTests */,
+				G_Products /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		G_Tests /* ShareCleanTests */ = {
+			isa = PBXGroup;
+			children = (
+				R_T_Swift /* ShareCleanTests.swift */,
+			);
+			path = ShareCleanTests;
+			sourceTree = "<group>";
+		};
+		G_Views /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				R_AppSwift /* App.swift */,
+				R_Home /* HomeView.swift */,
+				R_Detect /* DetectView.swift */,
+				R_Export /* ExportView.swift */,
+				R_Settings /* SettingsView.swift */,
+				R_Paywall /* PaywallView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		T_App /* ShareClean */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C_AppConfigs /* Build configuration list for PBXNativeTarget "ShareClean" */;
+			buildPhases = (
+				BP_AppSources /* Sources */,
+				BP_AppFrameworks /* Frameworks */,
+				BP_AppResources /* Resources */,
+				BP_EmbedExt /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareClean;
+			productName = ShareClean;
+			productReference = P_App /* .app */;
+			productType = "com.apple.product-type.application";
+		};
+		T_E1 /* ShareCleanAction */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C_E1Configs /* Build configuration list for PBXNativeTarget "ShareCleanAction" */;
+			buildPhases = (
+				BP_E1Sources /* Sources */,
+				BP_E1Frameworks /* Frameworks */,
+				BP_E1Resources /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareCleanAction;
+			productName = ShareCleanAction;
+			productReference = P_E1 /* ShareCleanAction.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		T_E2 /* ShareCleanPhotoEdit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C_E2Configs /* Build configuration list for PBXNativeTarget "ShareCleanPhotoEdit" */;
+			buildPhases = (
+				BP_E2Sources /* Sources */,
+				BP_E2Frameworks /* Frameworks */,
+				BP_E2Resources /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareCleanPhotoEdit;
+			productName = ShareCleanPhotoEdit;
+			productReference = P_E2 /* ShareCleanPhotoEdit.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		T_Tests /* ShareCleanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C_TestsConfigs /* Build configuration list for PBXNativeTarget "ShareCleanTests" */;
+			buildPhases = (
+				BP_TestsSources /* Sources */,
+				BP_TestsFrameworks /* Frameworks */,
+				BP_TestsResources /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareCleanTests;
+			productName = ShareCleanTests;
+			productReference = P_Tests /* ShareCleanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		PROJ /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = C_ProjConfigs /* Build configuration list for PBXProject "ShareClean" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = G_Root;
+			productRefGroup = G_Products /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				T_App /* ShareClean */,
+				T_E1 /* ShareCleanAction */,
+				T_E2 /* ShareCleanPhotoEdit */,
+				T_Tests /* ShareCleanTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BP_AppResources /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				A_AppAssets /* Assets.xcassets in Resources */,
+				A_Launch /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BP_E1Resources /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				E1_Storyboard /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BP_E2Resources /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				E2_Storyboard /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BP_TestsResources /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BP_AppSources /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				A_AppSwift /* App.swift in Sources */,
+				A_Home /* HomeView.swift in Sources */,
+				A_Detect /* DetectView.swift in Sources */,
+				A_Export /* ExportView.swift in Sources */,
+				A_Settings /* SettingsView.swift in Sources */,
+				A_Paywall /* PaywallView.swift in Sources */,
+				A_Core1 /* DetectionSettings.swift in Sources */,
+				A_Core2 /* RegexLibrary.swift in Sources */,
+				A_Core3 /* Geometry.swift in Sources */,
+				A_Core4 /* RedactionMask.swift in Sources */,
+				A_Core5 /* VisionDetector.swift in Sources */,
+				A_Core6 /* RedactionRenderer.swift in Sources */,
+				A_Core7 /* VerifyService.swift in Sources */,
+				A_Core8 /* EXIFStripper.swift in Sources */,
+				A_Core9 /* PhotoLibraryManager.swift in Sources */,
+				A_Core10 /* QuotaManager.swift in Sources */,
+				A_Core11 /* IAPManager.swift in Sources */,
+				A_Core12 /* ImageModel.swift in Sources */,
+				A_Core13 /* AppConstants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BP_E1Sources /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				E1_Src /* ActionViewController.swift in Sources */,
+				423510532E7DC945006B512F /* DetectionSettings.swift in Sources */,
+				423510542E7DC945006B512F /* RegexLibrary.swift in Sources */,
+				423510552E7DC945006B512F /* Geometry.swift in Sources */,
+				423510562E7DC945006B512F /* RedactionMask.swift in Sources */,
+				423510572E7DC945006B512F /* VisionDetector.swift in Sources */,
+				423510582E7DC945006B512F /* RedactionRenderer.swift in Sources */,
+				423510592E7DC945006B512F /* VerifyService.swift in Sources */,
+				4235105A2E7DC945006B512F /* EXIFStripper.swift in Sources */,
+				4235105B2E7DC945006B512F /* QuotaManager.swift in Sources */,
+				4235105C2E7DC945006B512F /* AppConstants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BP_E2Sources /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				E2_Src /* PhotoEditingViewController.swift in Sources */,
+				4235105D2E7DC945006B512F /* DetectionSettings.swift in Sources */,
+				4235105E2E7DC945006B512F /* RegexLibrary.swift in Sources */,
+				4235105F2E7DC945006B512F /* Geometry.swift in Sources */,
+				423510602E7DC945006B512F /* RedactionMask.swift in Sources */,
+				423510612E7DC945006B512F /* VisionDetector.swift in Sources */,
+				423510622E7DC945006B512F /* RedactionRenderer.swift in Sources */,
+				423510632E7DC945006B512F /* VerifyService.swift in Sources */,
+				423510642E7DC945006B512F /* EXIFStripper.swift in Sources */,
+				423510652E7DC945006B512F /* QuotaManager.swift in Sources */,
+				423510662E7DC945006B512F /* AppConstants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BP_TestsSources /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				T_Src /* ShareCleanTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C_AppDebug /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ShareClean/ShareClean.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9Z2475V7B5;
+				INFOPLIST_FILE = ShareClean/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+					PRODUCT_BUNDLE_IDENTIFIER = com.kivyx.shareclean;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C_AppRelease /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ShareClean/ShareClean.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9Z2475V7B5;
+				INFOPLIST_FILE = ShareClean/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+					PRODUCT_BUNDLE_IDENTIFIER = com.kivyx.shareclean;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C_E1Debug /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShareCleanAction/ShareCleanAction.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ShareCleanAction/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+					PRODUCT_BUNDLE_IDENTIFIER = com.kivyx.shareclean.action;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C_E1Release /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShareCleanAction/ShareCleanAction.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ShareCleanAction/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+					PRODUCT_BUNDLE_IDENTIFIER = com.kivyx.shareclean.action;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C_E2Debug /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShareCleanPhotoEdit/ShareCleanPhotoEdit.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ShareCleanPhotoEdit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+					PRODUCT_BUNDLE_IDENTIFIER = com.kivyx.shareclean.photoedit;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C_E2Release /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShareCleanPhotoEdit/ShareCleanPhotoEdit.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ShareCleanPhotoEdit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+					PRODUCT_BUNDLE_IDENTIFIER = com.kivyx.shareclean.photoedit;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C_ProjDebug /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C_ProjRelease /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C_TestsDebug /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+					PRODUCT_BUNDLE_IDENTIFIER = com.kivyx.shareclean.tests;
+				SDKROOT = iphonesimulator;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C_TestsRelease /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+					PRODUCT_BUNDLE_IDENTIFIER = com.kivyx.shareclean.tests;
+				SDKROOT = iphonesimulator;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C_AppConfigs /* Build configuration list for PBXNativeTarget "ShareClean" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C_AppDebug /* Debug */,
+				C_AppRelease /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C_E1Configs /* Build configuration list for PBXNativeTarget "ShareCleanAction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C_E1Debug /* Debug */,
+				C_E1Release /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C_E2Configs /* Build configuration list for PBXNativeTarget "ShareCleanPhotoEdit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C_E2Debug /* Debug */,
+				C_E2Release /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C_ProjConfigs /* Build configuration list for PBXProject "ShareClean" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C_ProjDebug /* Debug */,
+				C_ProjRelease /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C_TestsConfigs /* Build configuration list for PBXNativeTarget "ShareCleanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C_TestsDebug /* Debug */,
+				C_TestsRelease /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = PROJ /* Project object */;
 }

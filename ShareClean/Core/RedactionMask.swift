@@ -17,7 +17,9 @@ struct DetectionResult {
 
 struct RedactionStats {
     let emails: Int, phones: Int, amounts: Int, ids: Int, faces: Int, barcodes: Int
+    let leakCount: Int
     var total: Int { emails + phones + amounts + ids + faces + barcodes }
+    var hasLeaks: Bool { leakCount > 0 }
     var description: String {
         var parts:[String]=[]
         if emails>0 { parts.append("\(emails) emails") }
@@ -26,10 +28,12 @@ struct RedactionStats {
         if ids>0 { parts.append("\(ids) IDs") }
         if faces>0 { parts.append("\(faces) faces") }
         if barcodes>0 { parts.append("\(barcodes) codes") }
+        if leakCount>0 { parts.append("\(leakCount) potential leaks") }
         return parts.joined(separator: ", ")
     }
     init(from det: DetectionResult, leaks: VerifyResult) {
         emails=det.emails.count; phones=det.phones.count; amounts=det.amounts.count; ids=det.ids.count; faces=det.faces.count; barcodes=det.barcodes.count
+        leakCount = leaks.leakBoxes.count
     }
 }
 
