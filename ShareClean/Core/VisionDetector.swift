@@ -11,9 +11,16 @@ final class VisionDetector {
         let detImage: CGImage
         if scale < 1.0 {
             let w = Int(CGFloat(cg.width) * scale), h = Int(CGFloat(cg.height) * scale)
-            let ctx = CGContext(data: nil, width: w, height: h, bitsPerComponent: 8, bytesPerRow: 0, space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue)!
-            ctx.interpolationQuality = .high; ctx.draw(cg, in: CGRect(x: 0, y: 0, width: w, height: h)); detImage = ctx.makeImage()!
-        } else { detImage = cg }
+            guard let ctx = CGContext(data: nil, width: w, height: h, bitsPerComponent: 8, bytesPerRow: 0, space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue),
+                  let scaledImage = ctx.makeImage() else {
+                return DetectionResult()
+            }
+            ctx.interpolationQuality = .high
+            ctx.draw(cg, in: CGRect(x: 0, y: 0, width: w, height: h))
+            detImage = scaledImage
+        } else { 
+            detImage = cg 
+        }
         var res = DetectionResult()
         let handler = VNImageRequestHandler(cgImage: detImage, options: [:])
         var reqs: [VNRequest] = []
@@ -60,7 +67,13 @@ final class VisionDetector {
         }
         textReq.recognitionLevel = .accurate; textReq.usesLanguageCorrection = true
         reqs.append(textReq)
-        try? handler.perform(reqs)
+        
+        do {
+            try handler.perform(reqs)
+        } catch {
+            print("Vision framework error: \(error)")
+            return DetectionResult()
+        }
         if scale < 1.0 {
             let inv = 1.0/scale
             func S(_ a:[CGRect])->[CGRect]{ a.map{ CGRect(x:$0.origin.x*inv,y:$0.origin.y*inv,width:$0.size.width*inv,height:$0.size.height*inv) } }

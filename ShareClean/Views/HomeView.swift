@@ -41,8 +41,14 @@ struct HomeView: View {
     func loadSelected() async {
         images.removeAll()
         for item in selectedItems.prefix(5) {
-            if let data = try? await item.loadTransferable(type: Data.self),
-               let ui = UIImage(data: data) { images.append(ImageModel(uiImage: ui)) }
+            do {
+                if let data = try await item.loadTransferable(type: Data.self),
+                   let ui = UIImage(data: data) { 
+                    images.append(ImageModel(uiImage: ui)) 
+                }
+            } catch {
+                print("Failed to load image: \(error)")
+            }
         }
     }
 }

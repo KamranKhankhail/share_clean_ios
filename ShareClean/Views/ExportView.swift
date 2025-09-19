@@ -4,6 +4,8 @@ struct ExportView: View {
     let results: [RedactionResult]
     @Environment(\.dismiss) var dismiss
     @State private var isSaving = false
+    @State private var errorMessage: String?
+    @State private var showError = false
     
     var body: some View {
         NavigationView {
@@ -27,13 +29,34 @@ struct ExportView: View {
                         .disabled(isSaving)
                 }.padding()
             }.navigationTitle("Export")
+            .alert("Error", isPresented: $showError) {
+                Button("OK") { }
+            } message: {
+                Text(errorMessage ?? "An unknown error occurred")
+            }
         }
     }
     
     func saveAll() async {
         isSaving = true
         let manager = PhotoLibraryManager()
-        await manager.save(images: results.map{ $0.finalImage }, albumName: "ShareClean")
+        
+        do {
+            try await manager.save(images: results.map{ $0.finalImage }, albumName: "ShareClean")
+        } catch PhotoLibraryError.unauthorized {
+            errorMessage = "Photo library access denied. Please enable access in Settings."
+            showError = true
+        } catch PhotoLibraryError.albumCreationFailed {
+            errorMessage = "Failed to create ShareClean album. Please try again."
+            showError = true
+        } catch PhotoLibraryError.saveFailed(let error) {
+            errorMessage = "Failed to save images: \(error.localizedDescription)"
+            showError = true
+        } catch {
+            errorMessage = "Unexpected error: \(error.localizedDescription)"
+            showError = true
+        }
+        
         isSaving = false
     }
 }

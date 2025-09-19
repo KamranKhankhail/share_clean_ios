@@ -3,7 +3,7 @@ import StoreKit
 
 final class IAPManager: ObservableObject {
     static let shared = IAPManager()
-    let productIDs = ["com.yourcompany.shareclean.lifetime","com.yourcompany.shareclean.monthly"]
+    let productIDs = ["com.kivyx.shareclean.lifetime","com.kivyx.shareclean.monthly"]
     func isProUnlocked() -> Bool { AppConstants.defaults().bool(forKey: "isPro") }
     @MainActor
     func updateEntitlements() async {

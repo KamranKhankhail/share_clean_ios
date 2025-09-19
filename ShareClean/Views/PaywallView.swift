@@ -17,7 +17,12 @@ struct PaywallView: View {
         }.padding().task { await load() }
     }
     func load() async {
-        if let prods = try? await Product.products(for: IAPManager.shared.productIDs) { products = prods }
+        do {
+            let prods = try await Product.products(for: IAPManager.shared.productIDs)
+            products = prods
+        } catch {
+            print("Failed to load products: \(error)")
+        }
     }
     func buy(_ p: Product) async {
         do {
@@ -28,8 +33,15 @@ struct PaywallView: View {
                     await IAPManager.shared.updateEntitlements()
                     app.isPro = IAPManager.shared.isProUnlocked()
                 }
-            default: break
+            case .userCancelled:
+                print("Purchase cancelled by user")
+            case .pending:
+                print("Purchase pending")
+            @unknown default:
+                print("Unknown purchase result")
             }
-        } catch {}
+        } catch {
+            print("Purchase failed: \(error)")
+        }
     }
 }

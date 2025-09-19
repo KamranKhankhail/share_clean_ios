@@ -20,15 +20,37 @@ final class ActionViewController: UIViewController {
         fetchInput()
     }
     private func fetchInput() {
-        guard let item = self.extensionContext?.inputItems.first as? NSExtensionItem else { return }
-        guard let provider = item.attachments?.first else { return }
+        guard let item = self.extensionContext?.inputItems.first as? NSExtensionItem else { 
+            print("No input items available")
+            return 
+        }
+        guard let provider = item.attachments?.first else { 
+            print("No attachments available")
+            return 
+        }
         let type = UTType.image.identifier
         provider.loadItem(forTypeIdentifier: type, options: nil) { (data, error) in
             DispatchQueue.main.async {
-                if let url = data as? URL, let d = try? Data(contentsOf: url), let ui = UIImage(data: d) {
-                    self.inputImage = ui; self.img.image = ui
+                if let error = error {
+                    print("Error loading image: \(error)")
+                    return
+                }
+                
+                if let url = data as? URL {
+                    do {
+                        let d = try Data(contentsOf: url)
+                        if let ui = UIImage(data: d) {
+                            self.inputImage = ui
+                            self.img.image = ui
+                        }
+                    } catch {
+                        print("Error reading image from URL: \(error)")
+                    }
                 } else if let d = data as? Data, let ui = UIImage(data: d) {
-                    self.inputImage = ui; self.img.image = ui
+                    self.inputImage = ui
+                    self.img.image = ui
+                } else {
+                    print("Unable to load image from provided data")
                 }
             }
         }
@@ -51,7 +73,10 @@ final class ActionViewController: UIViewController {
         
         let det = VisionDetector(settings: settings).detect(in: ui)
         let out = RedactionRenderer().applyMasks(on: ui, boxes: det.allBoxes(dilate: settings.dilation))
-        guard let jpeg = out.jpegData(compressionQuality: 0.9) else { return }
+        guard let jpeg = out.jpegData(compressionQuality: 0.9) else { 
+            print("Failed to create JPEG data")
+            return 
+        }
         let item = NSExtensionItem()
         let provider = NSItemProvider(item: jpeg as NSSecureCoding, typeIdentifier: UTType.jpeg.identifier)
         item.attachments = [provider]

@@ -23,7 +23,13 @@ final class VerifyService {
             }
         }
         textReq.recognitionLevel = .accurate
-        try? handler.perform([textReq])
+        
+        do {
+            try handler.perform([textReq])
+        } catch {
+            print("Vision verification error: \(error)")
+        }
+        
         return VerifyResult(leakBoxes: leaks)
     }
 }
