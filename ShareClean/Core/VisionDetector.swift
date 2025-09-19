@@ -32,6 +32,9 @@ final class VisionDetector {
                 res.faces += boxes
             }
             faceRequest.revision = VNDetectFaceRectanglesRequestRevision3
+#if targetEnvironment(simulator)
+            faceRequest.usesCPUOnly = true
+#endif
             reqs.append(faceRequest)
         }
         if settings.detectBarcodes {
@@ -43,6 +46,9 @@ final class VisionDetector {
             }
             barcodeRequest.revision = VNDetectBarcodesRequestRevision3
             barcodeRequest.symbologies = [.QR,.aztec,.pdf417,.dataMatrix,.EAN13,.UPCE,.code128]
+#if targetEnvironment(simulator)
+            barcodeRequest.usesCPUOnly = true
+#endif
             reqs.append(barcodeRequest)
         }
         let textReq = VNRecognizeTextRequest { rq,_ in
@@ -66,6 +72,9 @@ final class VisionDetector {
             }
         }
         textReq.recognitionLevel = .accurate; textReq.usesLanguageCorrection = true
+#if targetEnvironment(simulator)
+        textReq.usesCPUOnly = true
+#endif
         reqs.append(textReq)
         
         do {
