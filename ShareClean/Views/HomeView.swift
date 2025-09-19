@@ -9,10 +9,12 @@ struct HomeView: View {
     @State private var showPaywall = false
     @State private var showExport = false
     @State private var results: [RedactionResult] = []
+    @State private var navigateToDetect = false
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(spacing: 16) {
+
                 Text("One‑Tap PII Redaction (Offline)").font(.headline)
                 Text("Faces • Emails • Phones • Amounts • IDs • QR • EXIF").font(.footnote).foregroundStyle(.secondary)
                 
@@ -21,11 +23,19 @@ struct HomeView: View {
                 }.onChange(of: selectedItems) { _ in Task { await loadSelected() } }
                 
                 if !images.isEmpty {
-                    NavigationLink(destination: DetectView(images: images, onResults: { r in results = r; showExport = true })) {
-                        Text("Detect & Redact").frame(maxWidth: .infinity).padding().background(Color.black).foregroundColor(.white).cornerRadius(12)
+                    Button {
+                        navigateToDetect = true
+                    } label: {
+                        Text("Detect & Redact")
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.black)
+                            .foregroundColor(.white)
+                            .cornerRadius(12)
                     }
+                    .buttonStyle(.plain)
                 }
-                
+
                 Button("Settings") { showSettings = true }.buttonStyle(.bordered)
                 if !app.isPro { Button("Go Pro") { showPaywall = true }.buttonStyle(.borderedProminent) }
                 Spacer()
@@ -36,19 +46,33 @@ struct HomeView: View {
             .sheet(isPresented: $showPaywall) { PaywallView() }
             .sheet(isPresented: $showExport) { ExportView(results: results) }
         }
+        .navigationDestination(isPresented: $navigateToDetect) {
+            DetectView(images: images) { r in
+                results = r
+                showExport = true
+            }
+        }
     }
     
     func loadSelected() async {
-        images.removeAll()
+        await MainActor.run {
+            navigateToDetect = false
+            images.removeAll()
+        }
         for item in selectedItems.prefix(5) {
             do {
                 if let data = try await item.loadTransferable(type: Data.self),
                    let ui = UIImage(data: data) { 
-                    images.append(ImageModel(uiImage: ui)) 
+                    await MainActor.run {
+                        images.append(ImageModel(uiImage: ui))
+                    }
                 }
             } catch {
                 print("Failed to load image: \(error)")
             }
+        }
+        await MainActor.run {
+            navigateToDetect = !images.isEmpty
         }
     }
 }
