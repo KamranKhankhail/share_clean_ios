@@ -18,23 +18,25 @@ final class VisionDetector {
         let handler = VNImageRequestHandler(cgImage: detImage, options: [:])
         var reqs: [VNRequest] = []
         if settings.detectFaces {
-            let r = VNDetectFaceRectanglesRequest()
-            r.revision = VNDetectFaceRectanglesRequestRevision3
-            r.completionHandler = { rq,_ in
-                let boxes = (rq.results as? [VNFaceObservation])?.map{ $0.boundingBox.scaled(to: CGSize(width: detImage.width, height: detImage.height)) } ?? []
+            let faceRequest = VNDetectFaceRectanglesRequest { rq,_ in
+                let boxes = (rq.results as? [VNFaceObservation])?.map {
+                    $0.boundingBox.scaled(to: CGSize(width: detImage.width, height: detImage.height))
+                } ?? []
                 res.faces += boxes
             }
-            reqs.append(r)
+            faceRequest.revision = VNDetectFaceRectanglesRequestRevision3
+            reqs.append(faceRequest)
         }
         if settings.detectBarcodes {
-            let r = VNDetectBarcodesRequest()
-            r.revision = VNDetectBarcodesRequestRevision3
-            r.symbologies = [.QR,.aztec,.pdf417,.dataMatrix,.EAN13,.UPCE,.code128]
-            r.completionHandler = { rq,_ in
-                let boxes = (rq.results as? [VNBarcodeObservation])?.map{ $0.boundingBox.scaled(to: CGSize(width: detImage.width, height: detImage.height)) } ?? []
+            let barcodeRequest = VNDetectBarcodesRequest { rq,_ in
+                let boxes = (rq.results as? [VNBarcodeObservation])?.map {
+                    $0.boundingBox.scaled(to: CGSize(width: detImage.width, height: detImage.height))
+                } ?? []
                 res.barcodes += boxes
             }
-            reqs.append(r)
+            barcodeRequest.revision = VNDetectBarcodesRequestRevision3
+            barcodeRequest.symbologies = [.QR,.aztec,.pdf417,.dataMatrix,.EAN13,.UPCE,.code128]
+            reqs.append(barcodeRequest)
         }
         let textReq = VNRecognizeTextRequest { rq,_ in
             guard self.settings.detectEmails || self.settings.detectPhones || self.settings.detectAmounts || self.settings.detectIDs else { return }

@@ -16,7 +16,7 @@
               <switch id="amounts"/><label text="Amounts" id="l4"/>
               <switch id="ids"/><label text="IDs" id="l5"/>
               <switch id="codes"/><label text="QR/Barcodes" id="l6"/>
-              <button id="btn" buttonType="system"><state key="normal" title="Redact & Return"/></button>
+              <button id="btn" buttonType="system"><state key="normal" title="Redact &amp; Return"/></button>
             </subviews>
           </stackView>
         </subviews>

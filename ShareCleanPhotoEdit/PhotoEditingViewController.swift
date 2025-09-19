@@ -1,5 +1,6 @@
 import UIKit
 import Photos
+import PhotosUI
 import Vision
 
 final class PhotoEditingViewController: UIViewController, PHContentEditingController {
@@ -27,8 +28,12 @@ final class PhotoEditingViewController: UIViewController, PHContentEditingContro
         if !QuotaManager.shared.canAutoRedact(isPro: isPro) { completionHandler(nil); return }
         
         let output = PHContentEditingOutput(contentEditingInput: input)
-        let url = input.fullSizeImageURL ?? input.renderedContentURL
-        guard let srcURL = url, let data = try? Data(contentsOf: srcURL), let ui = UIImage(data: data) else { completionHandler(nil); return }
+        guard let srcURL = input.fullSizeImageURL,
+              let data = try? Data(contentsOf: srcURL),
+              let ui = UIImage(data: data) else {
+            completionHandler(nil); return
+        }
+        let destinationURL = output.renderedContentURL
         var settings = DetectionSettings.default
         settings.detectFaces = faces.isOn; settings.detectEmails = emails.isOn; settings.detectPhones = phones.isOn
         settings.detectAmounts = amounts.isOn; settings.detectIDs = ids.isOn; settings.detectBarcodes = codes.isOn
@@ -36,10 +41,15 @@ final class PhotoEditingViewController: UIViewController, PHContentEditingContro
         let det = VisionDetector(settings: settings).detect(in: ui)
         let red = RedactionRenderer().applyMasks(on: ui, boxes: det.allBoxes(dilate: settings.dilation))
         let out = EXIFStripper.strip(red)
-        if let jpeg = out.jpegData(compressionQuality: 0.9) { try? jpeg.write(to: output.renderedContentURL!) } else { completionHandler(nil); return }
+        if let jpeg = out.jpegData(compressionQuality: 0.9) {
+            try? jpeg.write(to: destinationURL, options: [.atomic])
+        } else {
+            completionHandler(nil); return
+        }
         output.adjustmentData = PHAdjustmentData(formatIdentifier: "com.shareclean.adjust", formatVersion: "1.0", data: Data("redacted".utf8))
         QuotaManager.shared.incrementAutoRedacts()
         completionHandler(output)
     }
-    func shouldShowCancelConfirmation() -> Bool { false }
+    func cancelContentEditing() {}
+    var shouldShowCancelConfirmation: Bool { false }
 }

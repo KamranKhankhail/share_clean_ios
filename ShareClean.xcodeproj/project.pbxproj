@@ -72,10 +72,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		P_App /* .app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = .app; sourceTree = BUILT_PRODUCTS_DIR; };
-		P_E1 /* ShareCleanAction.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; name = ShareCleanAction.appex; path = .appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		P_E2 /* ShareCleanPhotoEdit.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; name = ShareCleanPhotoEdit.appex; path = .appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		P_Tests /* ShareCleanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; name = ShareCleanTests.xctest; path = .xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		P_App /* ShareClean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = ShareClean.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		P_E1 /* ShareCleanAction.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; path = ShareCleanAction.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		P_E2 /* ShareCleanPhotoEdit.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; path = ShareCleanPhotoEdit.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		P_Tests /* ShareCleanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = ShareCleanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		R_AppAssets /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		R_AppEnt /* ShareClean.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareClean.entitlements; sourceTree = "<group>"; };
 		R_AppPlist /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,11 +97,11 @@
 		R_E1_Ent /* ShareCleanAction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareCleanAction.entitlements; sourceTree = "<group>"; };
 		R_E1_Plist /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		R_E1_Src /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
-		R_E1_Storyboard /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		R_E1_Storyboard /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		R_E2_Ent /* ShareCleanPhotoEdit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareCleanPhotoEdit.entitlements; sourceTree = "<group>"; };
 		R_E2_Plist /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		R_E2_Src /* PhotoEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditingViewController.swift; sourceTree = "<group>"; };
-		R_E2_Storyboard /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		R_E2_Storyboard /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		R_Export /* ExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportView.swift; sourceTree = "<group>"; };
 		R_Home /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		R_Launch /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -146,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				R_AppPlist /* Info.plist */,
+				R_AppSwift /* App.swift */,
 				G_Res /* Resources */,
 				G_Views /* Views */,
 				G_Core /* Core */,
@@ -238,7 +239,6 @@
 		G_Views /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				R_AppSwift /* App.swift */,
 				R_Home /* HomeView.swift */,
 				R_Detect /* DetectView.swift */,
 				R_Export /* ExportView.swift */,
@@ -462,15 +462,18 @@
 		C_AppDebug /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ShareClean/ShareClean.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9Z2475V7B5;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ShareClean/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-					PRODUCT_BUNDLE_IDENTIFIER = com.kivyx.shareclean;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kivyx.shareclean;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -479,13 +482,15 @@
 		C_AppRelease /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ShareClean/ShareClean.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9Z2475V7B5;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ShareClean/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-					PRODUCT_BUNDLE_IDENTIFIER = com.kivyx.shareclean;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kivyx.shareclean;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
@@ -496,13 +501,16 @@
 		C_E1Debug /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = ShareCleanAction/ShareCleanAction.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ShareCleanAction/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-					PRODUCT_BUNDLE_IDENTIFIER = com.kivyx.shareclean.action;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kivyx.shareclean.action;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -511,11 +519,13 @@
 		C_E1Release /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = ShareCleanAction/ShareCleanAction.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ShareCleanAction/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-					PRODUCT_BUNDLE_IDENTIFIER = com.kivyx.shareclean.action;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kivyx.shareclean.action;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
@@ -526,13 +536,16 @@
 		C_E2Debug /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = ShareCleanPhotoEdit/ShareCleanPhotoEdit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ShareCleanPhotoEdit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-					PRODUCT_BUNDLE_IDENTIFIER = com.kivyx.shareclean.photoedit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kivyx.shareclean.photoedit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -541,11 +554,13 @@
 		C_E2Release /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = ShareCleanPhotoEdit/ShareCleanPhotoEdit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ShareCleanPhotoEdit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-					PRODUCT_BUNDLE_IDENTIFIER = com.kivyx.shareclean.photoedit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kivyx.shareclean.photoedit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
@@ -579,7 +594,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-					PRODUCT_BUNDLE_IDENTIFIER = com.kivyx.shareclean.tests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kivyx.shareclean.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphonesimulator;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
@@ -591,7 +607,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-					PRODUCT_BUNDLE_IDENTIFIER = com.kivyx.shareclean.tests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kivyx.shareclean.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphonesimulator;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
